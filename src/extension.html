@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    div {
+        font-family: 'Segoe UI', 'SegoeUI', 'Segoe WP', 'Helvetica Neue', Helvetica, Tahoma, Arial, sans-serif;
+        font-weight: 400;
+        cursor: pointer;
+    }
+
+    .container {
+        width: 150px;
+        padding: 10px;
+        text-align: center;
+    }
+
+    #edit-button {
+        border: 1px solid #fff;
+        padding: 4px;
+    }
+
+    #edit-button:hover {
+        border: 1px solid #ccc;
+    }
+
+    .none {
+        display: none;
+    }
+</style>
+</head>
+<body>
+    <div class="container">
+        <div id="edit-button" class="none">
+            <img src="icons/edit.png" alt="Edit">
+            Edit in private repo
+        </div>
+        <div id="message">This page is not editable.</div>
+    </div>
+</body>
+<script src="extension.js"></script>
+</html>
