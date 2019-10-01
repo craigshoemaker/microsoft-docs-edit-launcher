@@ -11,7 +11,8 @@ This browser extension opens the original location of an Azure docs article for 
 1. In Google Chrome, navigate to **chrome://extensions/**
 1. Enable the **Developer Mode** slider
 1. Click the **Load unpacked** button
-1. Navigate to the folder where you placed the code for the extension and click **Select Folder**
+1. Navigate to the folder where you placed the code for the extension
+1. Open the **src** folder and click **Select Folder**
 1. Navigate to an article on *docs.microsoft.com*
 1. Click the extension icon
 1. Click **Edit in private repo**
