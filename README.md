@@ -8,7 +8,7 @@ This browser extension opens the original location of an Azure docs article for 
 ## Installation and usage
 
 1. Clone or download this repo
-1. In Google Chrome, navigate to [chrome://extensions/](chrome://extensions/)
+1. In Google Chrome, navigate to **chrome://extensions/**
 1. Enable the **Developer Mode** slider
 1. Click the **Load unpacked** button
 1. Navigate to the folder where you placed the code for the extension and click **Select Folder**
