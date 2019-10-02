@@ -10,9 +10,3 @@ This browser extension opens the original location of an Azure docs article for 
 1. Navigate to an article on _docs.microsoft.com_
 1. Click the extension icon
 1. Click **Edit in private repo**
-
-## FAQ
-
-### What if I don't have access to the private repo?
-
-If you don't have access, then you'll need to send a request to the content team to grant you access.
