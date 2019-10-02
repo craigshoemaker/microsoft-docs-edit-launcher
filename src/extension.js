@@ -1,16 +1,37 @@
 'use strict';
 
-let message;
-let editButton;
+const els = {
+  messages: {
+    notMSDomain: null,
+    noUrl: null,
+    hide: () => {
+      els.messages.notMSDomain.classList.add('none');
+      els.messages.noUrl.classList.add('none');
+    },
+  },
+  editButton: null,
+};
 
-function disable() {
-  editButton.classList.add('none');
-  message.classList.remove('none');
-}
+const actions = {
+  enable: () => {
+    els.editButton.classList.remove('none');
+    els.messages.hide();
+  },
+
+  noUrl: () => {
+    els.messages.hide();
+    els.messages.noUrl.classList.remove('none');
+    els.editButton.classList.add('none');
+  },
+};
 
 function enable() {
   editButton.classList.remove('none');
   message.classList.add('none');
+}
+
+function notMSDomain() {
+  editButton.classList.add('none');
 }
 
 function sendMessage(message) {
@@ -25,18 +46,20 @@ function editButtonClick() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  message = document.getElementById('message');
+  els.messages.noUrl = document.getElementById('message-noUrl');
+  els.messages.notMSDomain = document.getElementById('message-notMSDomain');
 
-  editButton = document.getElementById('edit-button');
-  editButton.addEventListener('click', editButtonClick, false);
+  els.editButton = document.getElementById('edit-button');
+
+  els.editButton.addEventListener('click', editButtonClick, false);
 
   sendMessage({ action: 'load' });
 });
 
 chrome.runtime.onMessage.addListener(request => {
-  if (request.disable) {
-    disable();
-  } else if (request.enable) {
-    enable();
+  const action = request.action;
+
+  if (actions[action]) {
+    actions[action]();
   }
 });

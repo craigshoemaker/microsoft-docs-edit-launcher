@@ -34,13 +34,13 @@ function run(document) {
     url = getEditUrl(url);
     openUrl(url);
   } else {
-    chrome.runtime.sendMessage({ disable: true });
+    chrome.runtime.sendMessage({ action: 'noUrl' });
   }
 }
 
 function load() {
   if (/https?\:\/\/docs\.microsoft\.com/.test(window.location.href)) {
-    chrome.runtime.sendMessage({ enable: true });
+    chrome.runtime.sendMessage({ action: 'enable' });
   }
 }
 
