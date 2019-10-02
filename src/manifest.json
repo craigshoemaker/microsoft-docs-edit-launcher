@@ -1,7 +1,7 @@
 {
   "name": "Edit Page | Azure Docs",
   "short_name": "Edit Page | Azure Docs",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Edit Azure docs article in the private repo.",
   "manifest_version": 2,
   "icons": {
@@ -24,13 +24,8 @@
   },
   "content_scripts": [
     {
-      "matches": [
-        "https://docs.microsoft.com/*",
-        "http://docs.microsoft.com/*"
-      ],
-      "js": [
-        "content.js"
-      ],
+      "matches": ["https://docs.microsoft.com/*", "http://docs.microsoft.com/*"],
+      "js": ["content.js"],
       "run_at": "document_idle",
       "all_frames": false,
       "match_about_blank": false
