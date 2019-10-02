@@ -25,15 +25,6 @@ const actions = {
   },
 };
 
-function enable() {
-  editButton.classList.remove('none');
-  message.classList.add('none');
-}
-
-function notMSDomain() {
-  editButton.classList.add('none');
-}
-
 function sendMessage(message) {
   chrome.tabs.query({ active: true, currentWindow: true }, tabs => {
     const id = tabs[0].id;
