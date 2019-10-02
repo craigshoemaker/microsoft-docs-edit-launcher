@@ -1,5 +1,6 @@
 {
   "name": "Edit Page | Azure Docs",
+  "short_name": "Edit Page | Azure Docs",
   "version": "1.0.0",
   "description": "Edit Azure docs article in the private repo.",
   "manifest_version": 2,
