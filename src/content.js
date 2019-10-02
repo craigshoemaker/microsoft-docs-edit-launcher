@@ -11,6 +11,11 @@ function getUrl(document) {
   return url;
 }
 
+function getEditUrl(url) {
+  url = url.replace('/blob/', '/edit/');
+  return `${url}?message=[PARTNER%20EDIT]:%20&description=%3C%21--%20Please%20include%20%5BPARTNER%20EDIT%5D%20in%20your%20commit%20and%20PR%20title%20--%3E`;
+}
+
 function openUrl(url) {
   const link = document.createElement('a');
   link.href = url;
@@ -23,9 +28,10 @@ function openUrl(url) {
 }
 
 function run(document) {
-  const url = getUrl(document);
+  let url = getUrl(document);
 
   if (url.length > 0) {
+    url = getEditUrl(url);
     openUrl(url);
   } else {
     chrome.runtime.sendMessage({ disable: true });
