@@ -21,7 +21,7 @@ function sendMessage(message) {
 }
 
 function editButtonClick() {
-  sendMessage({ action: "run" });
+  sendMessage({ action: 'run' });
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -30,13 +30,13 @@ document.addEventListener('DOMContentLoaded', () => {
   editButton = document.getElementById('edit-button');
   editButton.addEventListener('click', editButtonClick, false);
 
-  sendMessage({ action: "load" });
+  sendMessage({ action: 'load' });
 });
 
 chrome.runtime.onMessage.addListener(request => {
-  if(request.disable) {
+  if (request.disable) {
     disable();
-  } else if(request.enable) {
+  } else if (request.enable) {
     enable();
   }
 });

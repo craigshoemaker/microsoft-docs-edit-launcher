@@ -1,4 +1,7 @@
 {
   "name": "azure-docs-edit-launcher",
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "devDependencies": {
+    "prettier": "^1.18.2"
+  }
 }
