@@ -6,42 +6,33 @@
         font-family: 'Segoe UI', 'SegoeUI', 'Segoe WP', 'Helvetica Neue', Helvetica, Tahoma, Arial,
           sans-serif;
         font-weight: 400;
-        cursor: pointer;
+        background-color: #fff;
       }
 
       .container {
-        width: 150px;
+        width: 250px;
         padding: 10px;
         text-align: center;
       }
 
       #edit-button {
-        border: 1px solid #fff;
-        padding: 4px;
-      }
-
-      #edit-button:hover {
-        border: 1px solid #ccc;
-      }
-
-      .none {
-        display: none;
+        display: inline-block;
+        border: 1px solid #ddde;
+        padding: 2px 4px 2px 4px;
+        border-radius: 3px;
+        font-size: 13px;
+        margin-top: 7px;
       }
     </style>
   </head>
 
   <body>
     <div class="container">
-      <div id="edit-button" class="none">
-        <img src="icons/edit.png" alt="Edit" />
-        Edit in private repo
+      <div>
+        Edit articles on
+        <a href="http://docs.microsoft.com" target="_blank">docs.microsoft.com</a> in the private
+        repo by clicking the <span id="edit-button"><img src="icons/edit.png" /> Edit</span> button.
       </div>
-      <div id="message-notMSDomain">
-        This page is not in the
-        <a href="http://docs.microsoft.com" target="_blank">docs.microsoft.com</a> domain.
-      </div>
-      <div id="message-noUrl" class="none">There is no public edit button on the page to read.</div>
     </div>
   </body>
-  <script src="extension.js"></script>
 </html>
