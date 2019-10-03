@@ -15,10 +15,9 @@ function getAuthor() {
   return meta.getAttribute('content');
 }
 
-function getEditUrl(url) {
+function getEditUrl(url, author) {
   if (/\/blob\//.test(url)) {
     url = url.replace('/blob/', '/edit/');
-    const author = getAuthor();
     url = `${url}?message=[PARTNER%20EDIT]:%20&description=%0A%0Acc%3A%20%40${author}%0A%0A%3C%21--%20Please%20include%20%5BPARTNER%20EDIT%5D%20in%20your%20commit%20and%20PR%20title%20--%3E`;
   }
   return url;
@@ -26,7 +25,8 @@ function getEditUrl(url) {
 
 function setAnchorAttributes() {
   let url = getUrl(editAnchor);
-  url = getEditUrl(url);
+  const author = getAuthor();
+  url = getEditUrl(url, author);
   editAnchor.setAttribute('href', url);
   editAnchor.setAttribute('target', '_blank');
 }
