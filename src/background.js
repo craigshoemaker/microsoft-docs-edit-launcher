@@ -7,11 +7,11 @@ function sendMessage(message) {
   });
 }
 
-chrome.runtime.onInstalled.addListener(() => {
-  chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
-    sendMessage({ action: 'load' });
-  });
+chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
+  sendMessage({ action: 'load' });
+});
 
+chrome.runtime.onInstalled.addListener(() => {
   chrome.declarativeContent.onPageChanged.removeRules(undefined, () => {
     chrome.declarativeContent.onPageChanged.addRules([
       {
