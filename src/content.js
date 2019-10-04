@@ -18,6 +18,7 @@ function getAuthor() {
 function getEditUrl(url, author) {
   if (/\/blob\//.test(url)) {
     url = url.replace('/blob/', '/edit/');
+    url = url.replace('/live/', '/master/');
     url = `${url}?message=[PARTNER%20EDIT]:%20&description=%0A%0Acc%3A%20%40${author}%0A%0A%3C%21--%20Please%20include%20%5BPARTNER%20EDIT%5D%20in%20your%20commit%20and%20PR%20title%20--%3E`;
   }
   return url;
