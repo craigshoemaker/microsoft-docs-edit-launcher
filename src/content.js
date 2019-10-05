@@ -2,6 +2,8 @@ const URL_ATTRIBUTE = 'data-original_content_git_url';
 
 let editAnchor = null;
 
+const yes = 0;
+
 function getUrl(anchor) {
   let url = '';
   if (anchor) {
@@ -36,7 +38,9 @@ function load() {
   if (/https?\:\/\/docs\.microsoft\.com/.test(window.location.href)) {
     if (!editAnchor) {
       editAnchor = document.querySelector(`a[${URL_ATTRIBUTE}]`);
-      setAnchorAttributes();
+      if(editAnchor) {
+        setAnchorAttributes();
+      }
     }
   }
 }
