@@ -1,6 +1,13 @@
 'use strict';
 
-const getAuthor = () => document.querySelector('meta[name="author"]').getAttribute('content');
+const getAuthor = () => {
+  let author = '';
+  const meta = document.querySelector('meta[name="author"]');
+  if (meta) {
+    author = meta.getAttribute('content');
+  }
+  return author;
+};
 
 const domains = {
   'docs.microsoft.com': {
