@@ -11,9 +11,9 @@ const getAuthor = () => {
 
 const domains = {
   'docs.microsoft.com': {
+    isMatch: () => true,
     selector: `a[data-original_content_git_url]`,
     attribute: 'data-original_content_git_url',
-    isMatch: () => true,
     rules: [
       { apply: url => url.replace('/blob/', '/edit/') },
       { apply: url => url.replace('/live/', '/master/') },
