@@ -17,8 +17,7 @@ const domains = {
     rules: [
       { apply: url => url.replace('/blob/', '/edit/') },
       { apply: url => url.replace('/live/', '/master/') },
-      { apply: url => `${url}?message=[PARTNER%20EDIT]:%20` },
-      { apply: url => `${url}&description=` },
+      { apply: url => `${url}?description=` },
       {
         apply: url => {
           let author = getAuthor();
@@ -27,8 +26,7 @@ const domains = {
           }
           return `${url}${author}`;
         },
-      },
-      { apply: url => `${url}%0A%0A%3C%21--%20Please%20include%20%5BPARTNER%20EDIT%5D%20in%20your%20commit%20and%20PR%20title%20--%3E` },
+      }
     ],
   },
 };
