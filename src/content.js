@@ -38,7 +38,7 @@ const strategy = {
 
 const actions = {
   load: () => {
-    const domain = domains[window.location.host];
+    const domain = domains[window.location.hostname];
     if (domain) {
       strategy.run(domain);
     }
