@@ -31,7 +31,7 @@ const domains = {
   },
 };
 
-const strategy = {
+const transformation = {
   run: domain => {
     if (domain.isMatch(window.location.pathname)) {
       const anchors = document.querySelectorAll(domain.selector);
@@ -51,7 +51,7 @@ const actions = {
   load: () => {
     const domain = domains[window.location.hostname];
     if (domain) {
-      strategy.run(domain);
+      transformation.run(domain);
     }
   }
 }
