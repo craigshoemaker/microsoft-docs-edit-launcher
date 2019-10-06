@@ -35,7 +35,7 @@ const domains = {
 
 const strategy = {
   run: domain => {
-    if (domain.isMatch()) {
+    if (domain.isMatch(window.location.pathname)) {
       const anchors = document.querySelectorAll(domain.selector);
       [].forEach.call(anchors, a => {
         let url = a.getAttribute(domain.attribute);
