@@ -43,6 +43,7 @@ const domains = {
     },
     rules: [
       { apply: url => url.replace('/blob/', '/edit/') },
+      { apply: url => url.replace(/\/(.*)-docs\//, '$1-docs-pr/') },
       { apply: url => `${url}?description=` },
       {
         apply: (url, author) => {
