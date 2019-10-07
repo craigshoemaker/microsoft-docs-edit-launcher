@@ -53,7 +53,6 @@ chrome.runtime.onInstalled.addListener(() => {
 
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   if (actions[request.action]) {
-    debugger;
     actions[request.action](request);
   }
 });

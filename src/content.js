@@ -86,7 +86,6 @@ const transformation = {
         a.setAttribute('href', url);
         a.setAttribute('target', '_blank');
         a.addEventListener('click', e => {
-          debugger;
           const message = {
             action: 'log',
             url: domain.getPublicUrl(),
