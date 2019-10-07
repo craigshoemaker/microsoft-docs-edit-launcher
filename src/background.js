@@ -6,7 +6,23 @@ function sendMessage(message) {
     if (tab) {
       const id = tab.id;
       chrome.tabs.sendMessage(id, message);
+    }
   });
+}
+
+const actions = {
+  log: message => {
+
+    /*
+      message
+        - action: Always equals 'log' in this function
+        - url:    The public URL of the published article
+        - source: Domain host name, for example: 'docs.microsoft.com' or 'github.com'
+      };
+    */
+
+    console.log(message);
+  }
 }
 
 chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
@@ -33,4 +49,11 @@ chrome.runtime.onInstalled.addListener(() => {
       },
     ]);
   });
+});
+
+chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+  if (actions[request.action]) {
+    debugger;
+    actions[request.action](request);
+  }
 });

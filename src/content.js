@@ -1,10 +1,13 @@
 'use strict';
 
+let domain;
+
 const domains = {
   'docs.microsoft.com': {
     isMatch: () => true,
     selector: `a[data-original_content_git_url]`,
     attribute: 'data-original_content_git_url',
+    getPublicUrl: () => window.location.href,
     getAuthor: () => {
       let author = '';
       const el = document.querySelector('meta[name="author"]');
@@ -32,6 +35,14 @@ const domains = {
     isMatch: pathname => /MicrosoftDocs/.test(pathname),
     selector: 'a[href^="https://github.com/Microsoft"][href*="/blob/"]',
     attribute: 'href',
+    getPublicUrl: () => {
+      let url = '';
+      const a = document.querySelector('a[href^="https://docs.microsoft.com"]');
+      if (a) {
+        url = a.getAttribute('href');
+      }
+      return url;
+    },
     getAuthor: () => {
       let author = '';
       const el = document.querySelector('.user-mention');
@@ -53,6 +64,11 @@ const domains = {
           return `${url}${author}`;
         },
       },
+      { apply: url => {
+          const root = `${window.location.protocol}//?${window.location.hostname}`;
+          url = url.replace(RegExp(root), '') 
+          return url;
+      }},
     ],
   },
 };
@@ -69,6 +85,15 @@ const transformation = {
         });
         a.setAttribute('href', url);
         a.setAttribute('target', '_blank');
+        a.addEventListener('click', e => {
+          debugger;
+          const message = {
+            action: 'log',
+            url: domain.getPublicUrl(),
+            source: window.location.hostname
+          };
+          chrome.runtime.sendMessage(message);
+        })
       });
     }
   },
@@ -76,7 +101,7 @@ const transformation = {
 
 const actions = {
   load: () => {
-    const domain = domains[window.location.hostname];
+    domain = domains[window.location.hostname];
     if (domain) {
       transformation.run(domain);
     }
