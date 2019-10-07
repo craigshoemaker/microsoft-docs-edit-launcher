@@ -2,8 +2,10 @@
 
 function sendMessage(message) {
   chrome.tabs.query({ active: true, currentWindow: true }, tabs => {
-    const id = tabs[0].id;
-    chrome.tabs.sendMessage(id, message);
+    const tab = tabs[0];
+    if (tab) {
+      const id = tab.id;
+      chrome.tabs.sendMessage(id, message);
   });
 }
 
