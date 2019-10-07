@@ -21,6 +21,11 @@ chrome.runtime.onInstalled.addListener(() => {
               hostEquals: 'docs.microsoft.com',
             },
           }),
+          new chrome.declarativeContent.PageStateMatcher({
+            pageUrl: {
+              hostEquals: 'github.com',
+            },
+          })
         ],
         actions: [new chrome.declarativeContent.ShowPageAction()],
       },

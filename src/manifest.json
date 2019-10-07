@@ -24,7 +24,12 @@
   },
   "content_scripts": [
     {
-      "matches": ["https://docs.microsoft.com/*", "http://docs.microsoft.com/*"],
+      "matches": [
+        "https://docs.microsoft.com/*", 
+        "http://docs.microsoft.com/*",
+        "http://github.com/MicrosoftDocs/*",
+        "https://github.com/MicrosoftDocs/*"
+      ],
       "js": ["content.js"],
       "run_at": "document_idle",
       "all_frames": false,
@@ -35,6 +40,8 @@
     "activeTab",
     "declarativeContent",
     "https://docs.microsoft.com/*",
-    "http://docs.microsoft.com/*"
+    "http://docs.microsoft.com/*",
+    "http://github.com/MicrosoftDocs/*",
+    "https://github.com/MicrosoftDocs/*"
   ]
 }
