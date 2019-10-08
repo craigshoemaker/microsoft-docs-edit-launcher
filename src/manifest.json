@@ -1,8 +1,8 @@
 {
-  "name": "Edit Page | Azure Docs",
-  "short_name": "Edit Page | Azure Docs",
-  "version": "1.3.0",
-  "description": "Edit Azure docs article in the private repo.",
+  "name": "Edit Page | Microsoft Docs",
+  "short_name": "Edit Page | Microsoft Docs",
+  "version": "1.3.1",
+  "description": "Edit Microsoft docs articles in the private repo.",
   "manifest_version": 2,
   "icons": {
     "16": "/icons/icon16.png",
@@ -20,7 +20,7 @@
       "128": "/icons/icon128.png"
     },
     "default_popup": "extension.html",
-    "default_title": "Edit Azure docs article in the private repo."
+    "default_title": "Edit Microsoft docs article in the private repo."
   },
   "content_scripts": [
     {
