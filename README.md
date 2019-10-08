@@ -2,13 +2,11 @@
 
 This browser extension opens the original location of a Microsoft docs article for editing in the private repository.
 
-## Installation and usage
+## Installation
 
-1. Install via the [Google web store](https://chrome.google.com/webstore/detail/edit-page-azure-docs/kfdadnfiopehhcedhlflpioebhihpkia).
-1. Navigate to an article on _docs.microsoft.com_
-1. Click the **Edit** button
+Install via the [Google web store](https://chrome.google.com/webstore/detail/edit-page-azure-docs/kfdadnfiopehhcedhlflpioebhihpkia).
 
-## Features
+## Usage
 
 > **NOTE** Workflows only works if you have access to the destination repository.
 
