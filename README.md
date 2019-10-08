@@ -10,7 +10,7 @@ Install via the [Google web store](https://chrome.google.com/webstore/detail/edi
 
 > **NOTE** Workflows only works if you have access to the destination repository.
 
-When you click attempt to edit an article:
+When you attempt to edit an article:
 
 1. GitHub's page editor is opened
 1. The commit description is pre-populated with the article author's GitHub username
