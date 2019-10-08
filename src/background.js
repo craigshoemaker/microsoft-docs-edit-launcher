@@ -1,5 +1,7 @@
 'use strict';
 
+const GA_ACCOUNT_KEY = '{GA_ACCOUNT_KEY}';
+
 function sendMessage(message) {
   chrome.tabs.query({ active: true, currentWindow: true }, tabs => {
     const tab = tabs[0];
