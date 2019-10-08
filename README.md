@@ -1,6 +1,6 @@
-# Azure Docs Edit Launcher
+# Microsoft Docs Edit Launcher
 
-This browser extension opens the original location of an Azure docs article for editing in the private repository.
+This browser extension opens the original location of a Microsoft docs article for editing in the private repository.
 
 ## Installation and usage
 
