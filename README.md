@@ -20,6 +20,10 @@ When you click on the *Edit* button:
 1. The commit title is pre-populated with `[PARTNER EDIT]`
 1. The commit description is pre-populated with the article author's GitHub username
 
+### On github.com:
+
+1. Click on the <em>Content Source</em> link in an article issue
+
 ## Acknowledgements
 
 Thanks to [Erika Doyle](https://github.com/erikadoyle) and [John Papa](https://github.com/johnpapa) for feedback and suggestions.
