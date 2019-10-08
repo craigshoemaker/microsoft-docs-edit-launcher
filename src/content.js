@@ -2,6 +2,17 @@
 
 let domain;
 
+const commonRules = {
+  addDescription: url => `${url}?description=`,
+
+  addAuthor: (url, author) => {
+    if (author.length > 0) {
+      author = `%0A%0Acc%3A%20%40${author}`;
+    }
+    return `${url}${author}`;
+  }
+};
+
 const domains = {
   'docs.microsoft.com': {
     isMatch: () => true,
@@ -19,15 +30,8 @@ const domains = {
     rules: [
       { apply: url => url.replace('/blob/', '/edit/') },
       { apply: url => url.replace('/live/', '/master/') },
-      { apply: url => `${url}?description=` },
-      {
-        apply: (url, author) => {
-          if (author.length > 0) {
-            author = `%0A%0Acc%3A%20%40${author}`;
-          }
-          return `${url}${author}`;
-        },
-      },
+      { apply: url => commonRules.addDescription(url) },
+      { apply: (url, author) => commonRules.addAuthor(url, author) },
     ],
   },
 
@@ -55,20 +59,9 @@ const domains = {
     rules: [
       { apply: url => url.replace('/blob/', '/edit/') },
       { apply: url => url.replace(/\/(.*)-docs\//, '$1-docs-pr/') },
-      { apply: url => `${url}?description=` },
-      {
-        apply: (url, author) => {
-          if (author.length > 0) {
-            author = `%0A%0Acc%3A%20%40${author}`;
-          }
-          return `${url}${author}`;
-        },
-      },
-      { apply: url => {
-          const root = `${window.location.protocol}//?${window.location.hostname}`;
-          url = url.replace(RegExp(root), '') 
-          return url;
-      }},
+      { apply: url => commonRules.addDescription(url) },
+      { apply: (url, author) => commonRules.addAuthor(url, author) },
+      { apply: url => url.replace(/https?:\/\/?github.com/, '') },
     ],
   },
 };
