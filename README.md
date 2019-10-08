@@ -12,17 +12,15 @@ This browser extension opens the original location of a Microsoft docs article f
 
 > **NOTE** Workflows only works if you have access to the destination repository.
 
-### On docs.microsoft.com:
-
-When you click on the *Edit* button:
+When you click attempt to edit an article:
 
 1. GitHub's page editor is opened
 1. The commit description is pre-populated with the article author's GitHub username
 
-### On github.com:
-
-1. Click on the _Content Source_ link in an article issue
-1. The commit description is pre-populated with the article author's GitHub username
+| Website | Click on the... |
+|---------|-----------------|
+| docs.microsoft.com | *Edit* button |
+| github.com | _Content Source_ link in an article issue
 
 ## Acknowledgements
 
