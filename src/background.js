@@ -17,7 +17,7 @@ const actions = {
       message
         - action: Always equals 'log' in this function
         - url:    The public URL of the published article
-        - source: Domain host name, for example: 'docs.microsoft.com' or 'github.com'
+        - source: Domain hostname, for example: 'docs.microsoft.com' or 'github.com'
       };
     */
 
