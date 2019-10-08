@@ -17,12 +17,12 @@ This browser extension opens the original location of a Microsoft docs article f
 When you click on the *Edit* button:
 
 1. GitHub's page editor is opened
-1. The commit title is pre-populated with `[PARTNER EDIT]`
 1. The commit description is pre-populated with the article author's GitHub username
 
 ### On github.com:
 
-1. Click on the <em>Content Source</em> link in an article issue
+1. Click on the _Content Source_ link in an article issue
+1. The commit description is pre-populated with the article author's GitHub username
 
 ## Acknowledgements
 
